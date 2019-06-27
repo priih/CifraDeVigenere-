@@ -5,7 +5,9 @@ var alphabet = "abcdefghijklmnopqrstuvwxyz";
 function cipher() {
 	var palavra = (document.querySelector('.palavra').value.toLowerCase());
 	var chave = (document.querySelector('.chave').value.toLowerCase());
-	var numsim = '1234567890!@#$%¨&*()_+,./|';
+    var numerosimbolo = '1234567890!@#$%¨&*()_+,./|';
+    var acento = 'áàâãéèêíìîóòôõúùûç';
+    var semacento = 'aaaaeeeiiioooouuuc';
 	console.log(`chave ${chave}`);
 	console.log(palavra)
 	var j = 0;
@@ -16,15 +18,22 @@ function cipher() {
         if (j >= chave.length) {
             j = 0;
         }
-
+        //tratando espaços
         if (palavra.charAt(i) === " ") {
             resultado = resultado + " ";
             ++i;
         }
-
-        for (let k = 0; k < numsim.length; k++) {
-            if (palavra.charAt(i) === numsim.charAt(k)) {
-                resultado = resultado + numsim.charAt(k)
+        //tratando numeros e símbolos
+        for (let k = 0; k < numerosimbolo.length; k++) {
+            if (palavra.charAt(i) === numerosimbolo.charAt(k)) {
+                resultado = resultado + numerosimbolo.charAt(k)
+                ++i;
+            }
+        }
+        //tratando acento
+        for (let k = 0; k < acento.length; k++) {
+            if (palavra.charAt(i) === acento.charAt(k)) {
+                resultado = resultado + semacento.charAt(k)
                 ++i;
             }
         }
@@ -56,7 +65,9 @@ function decipher() {
 	var palavra = (document.querySelector('.palavra').value.toLowerCase());
 	var chave = (document.querySelector('.chave').value.toLowerCase());
     var alfabeto = "abcdefghijklmnopqrstuvwxyz";
-    var numsim = '1234567890!@#$%¨&*()_+,./|';
+    var numerosimbolo = '1234567890!@#$%¨&*()_+,./|';
+    var acento = 'áàâãéèêíìîóòôõúùûç';
+    var semacento = 'aaaaeeeiiioooouuuc';
     var resultado = "";
     var j = 0;
     for (var i = 0; i < palavra.length; i++) {
@@ -64,15 +75,23 @@ function decipher() {
         if (j >= chave.length) {
             j = 0;
         }
-
+        //tratando espaços
         if (palavra.charAt(i) === " ") {
             resultado = resultado + " ";
             ++i;
         }
+        //tratando numeros e símbolos
+        for (let k = 0; k < numerosimbolo.length; k++) {
+            if (palavra.charAt(i) === numerosimbolo.charAt(k)) {
+                resultado = resultado + numerosimbolo.charAt(k)
+                ++i;
+            }
+        }
 
-        for (let k = 0; k < numsim.length; k++) {
-            if (palavra.charAt(i) === numsim.charAt(k)) {
-                resultado = resultado + numsim.charAt(k)
+        //tratando acento
+        for (let k = 0; k < acento.length; k++) {
+            if (palavra.charAt(i) === acento.charAt(k)) {
+                resultado = resultado + semacento.charAt(k)
                 ++i;
             }
         }
