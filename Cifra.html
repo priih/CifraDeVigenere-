@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Cifra de Vigenère</title>
+</head>
+
+<body>
+    <header class="titulo-principal">
+        <h1>Cifra de Vigenère</h1>
+    </header>
+
+    <img class="img-logo" src="imagens/logoo.png">
+
+    <form class="form">
+        <label for="exampleFormControlTextarea1">Digite a frase a ser criptografada:</label>
+        <div class="form-group">
+            <textarea class="form-control palavra" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+
+        <label for="exampleFormControlTextarea1">Digite a chave:</label>
+        <div class="form-group">
+            <textarea class="form-control chave" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+        
+    </form>
+
+    <div class="col-md-12" align="center">
+        <button class="btn btn-primary" onclick="cipher()">Criptografar</button>
+        <button class="btn btn-primary" onclick="decipher()">Descriptografar</button>
+    </div>
+
+    <div id="retorno" class="form">
+        <p class="form-control return-cipher" type="text">Resultado da criptografia</p>
+    </div>
+
+    <div id="retorno" class="form">
+        <p class="form-control return-decipher" type="text">Resultado da descriptografia</p>
+    </div>
+
+    <footer class="rodape">
+        <p>By: Priscila Marques</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
