@@ -3,7 +3,7 @@ var alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 //cifrar palavra
 function cipher() {
-    var palavra = (document.querySelector('.palavra').value.toLowerCase());
+    var palavra = retirarAcento(document.querySelector('.palavra').value.toLowerCase());
     var chave = (document.querySelector('.chave').value.toLowerCase());
     var numerosimbolo = '1234567890!@#$%¨&*()_+,./|';
     var acento = 'áàâãéèêíìîóòôõúùûç';
@@ -115,4 +115,15 @@ function decipher() {
     }
     console.log(document.querySelector('.return-decipher'))
     document.querySelector('.return-decipher').innerHTML = resultado;
+}
+
+function retirarAcento(word) {
+    word = word.toLowerCase();
+    word = word.replace(new RegExp('[ÁÀÂÃ]', 'gi'), 'a');
+    word = word.replace(new RegExp('[ÉÈÊ]', 'gi'), 'e');
+    word = word.replace(new RegExp('[ÍÌÎ]', 'gi'), 'i');
+    word = word.replace(new RegExp('[ÓÒÔÕ]', 'gi'), 'o');
+    word = word.replace(new RegExp('[ÚÙÛ]', 'gi'), 'u');
+    word = word.replace(new RegExp('[Ç]', 'gi'), 'c');
+    return word;
 }
