@@ -3,17 +3,17 @@ var alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 //cifrar palavra
 function cipher() {
-	var palavra = (document.querySelector('.palavra').value.toLowerCase());
-	var chave = (document.querySelector('.chave').value.toLowerCase());
+    var palavra = (document.querySelector('.palavra').value.toLowerCase());
+    var chave = (document.querySelector('.chave').value.toLowerCase());
     var numerosimbolo = '1234567890!@#$%¨&*()_+,./|';
     var acento = 'áàâãéèêíìîóòôõúùûç';
     var semacento = 'aaaaeeeiiioooouuuc';
-	console.log(`chave ${chave}`);
-	console.log(palavra)
-	var j = 0;
-	var resultado = ' ';
+    console.log(`chave ${chave}`);
+    console.log(palavra)
+    var j = 0;
+    var resultado = ' ';
 
-	for (var i = 0; i < palavra.length; i++) {
+    for (var i = 0; i < palavra.length; i++) {
 
         if (j >= chave.length) {
             j = 0;
@@ -55,15 +55,15 @@ function cipher() {
 
             j++;
         }
-	}
-	console.log(document.querySelector('.return-cipher'))
-	document.querySelector('.return-cipher').innerHTML = resultado;
+    }
+    console.log(document.querySelector('.return-cipher'))
+    document.querySelector('.return-cipher').innerHTML = resultado;
 }
 
 //decifrar palavra
 function decipher() {
-	var palavra = (document.querySelector('.palavra').value.toLowerCase());
-	var chave = (document.querySelector('.chave').value.toLowerCase());
+    var palavra = (document.querySelector('.palavra').value.toLowerCase());
+    var chave = (document.querySelector('.chave').value.toLowerCase());
     var alfabeto = "abcdefghijklmnopqrstuvwxyz";
     var numerosimbolo = '1234567890!@#$%¨&*()_+,./|';
     var acento = 'áàâãéèêíìîóòôõúùûç';
@@ -113,6 +113,6 @@ function decipher() {
             j++;
         }
     }
-	console.log(document.querySelector('.return-decipher'))
-	document.querySelector('.return-decipher').innerHTML = resultado;
+    console.log(document.querySelector('.return-decipher'))
+    document.querySelector('.return-decipher').innerHTML = resultado;
 }
