@@ -30,13 +30,7 @@ function cipher() {
                 ++i;
             }
         }
-        //tratando acento
-        for (let k = 0; k < acento.length; k++) {
-            if (palavra.charAt(i) === acento.charAt(k)) {
-                resultado = resultado + semacento.charAt(k)
-                ++i;
-            }
-        }
+    
 
         if (i < palavra.length) {
             var posicaochave = alphabet.indexOf(chave.charAt(j)); //pega posição das letras da chave
@@ -88,14 +82,6 @@ function decipher() {
             }
         }
 
-        //tratando acento
-        for (let k = 0; k < acento.length; k++) {
-            if (palavra.charAt(i) === acento.charAt(k)) {
-                resultado = resultado + semacento.charAt(k)
-                ++i;
-            }
-        }
-
         if (i < palavra.length) {
             var posicaochave = alfabeto.indexOf(chave.charAt(j));
             var posicaoletra = alfabeto.indexOf(palavra.charAt(i));
@@ -117,6 +103,7 @@ function decipher() {
     document.querySelector('.return-decipher').innerHTML = resultado;
 }
 
+//tratando acento
 function retirarAcento(word) {
     word = word.toLowerCase();
     word = word.replace(new RegExp('[ÁÀÂÃ]', 'gi'), 'a');
