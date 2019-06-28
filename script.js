@@ -6,8 +6,6 @@ function cipher() {
     var palavra = retirarAcento(document.querySelector('.palavra').value.toLowerCase());
     var chave = (document.querySelector('.chave').value.toLowerCase());
     var numerosimbolo = '1234567890!@#$%¨&*()_+,./|';
-    var acento = 'áàâãéèêíìîóòôõúùûç';
-    var semacento = 'aaaaeeeiiioooouuuc';
     console.log(`chave ${chave}`);
     console.log(palavra)
     var j = 0;
@@ -60,8 +58,6 @@ function decipher() {
     var chave = (document.querySelector('.chave').value.toLowerCase());
     var alfabeto = "abcdefghijklmnopqrstuvwxyz";
     var numerosimbolo = '1234567890!@#$%¨&*()_+,./|';
-    var acento = 'áàâãéèêíìîóòôõúùûç';
-    var semacento = 'aaaaeeeiiioooouuuc';
     var resultado = "";
     var j = 0;
     for (var i = 0; i < palavra.length; i++) {
