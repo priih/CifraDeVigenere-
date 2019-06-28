@@ -100,13 +100,13 @@ function decipher() {
 }
 
 //tratando acento
-function retirarAcento(word) {
-    word = word.toLowerCase();
-    word = word.replace(new RegExp('[ÁÀÂÃ]', 'gi'), 'a');
-    word = word.replace(new RegExp('[ÉÈÊ]', 'gi'), 'e');
-    word = word.replace(new RegExp('[ÍÌÎ]', 'gi'), 'i');
-    word = word.replace(new RegExp('[ÓÒÔÕ]', 'gi'), 'o');
-    word = word.replace(new RegExp('[ÚÙÛ]', 'gi'), 'u');
-    word = word.replace(new RegExp('[Ç]', 'gi'), 'c');
-    return word;
+function retirarAcento(palavra) {
+     palavra= palavra.toLowerCase();
+     palavra= palavra.replace(new RegExp('[ÁÀÂÃ]', 'gi'), 'a');
+     palavra= palavra.replace(new RegExp('[ÉÈÊ]', 'gi'), 'e');
+     palavra= palavra.replace(new RegExp('[ÍÌÎ]', 'gi'), 'i');
+    palavra= palavra.replace(new RegExp('[ÓÒÔÕ]', 'gi'), 'o');
+    palavra =palavra .replace(new RegExp('[ÚÙÛ]', 'gi'), 'u');
+    palavra =palavra .replace(new RegExp('[Ç]', 'gi'), 'c');
+    return palavra;
 }
